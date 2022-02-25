@@ -25,7 +25,7 @@ public class DateCommand implements Runnable {
     @Override
     public void run() {
         Date actualDate=new Date();
-        String pattern = "dd-MM-yyyy";
+        String pattern = "yyyy-MM-dd";
         System.out.println(new SimpleDateFormat(pattern).format(actualDate));
     }
 
