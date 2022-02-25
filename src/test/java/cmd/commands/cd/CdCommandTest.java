@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CdCommandTest extends AbstractTest {
     @Test
-    public void testDirWithF(@TempDir Path tempDir) throws IOException {
+    public void testCdWithArg(@TempDir Path tempDir) throws IOException {
         // given
         String location = "C:\\";
         String[] args = {location};
@@ -29,7 +29,7 @@ class CdCommandTest extends AbstractTest {
     }
 
     @Test
-    public void testDirWithoutArguments(@TempDir Path tempDir) throws IOException {
+    public void testCdWithoutArguments(@TempDir Path tempDir) throws IOException {
         // given
         //prepareTestFolder(tempDir);
         String[] args = {};
