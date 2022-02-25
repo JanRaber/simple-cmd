@@ -33,17 +33,5 @@ class DateCommandTest extends AbstractTest {
     assertEquals(actual, expected, "Expected : " + expected + " But was: " + actual);
   }
 
-  @Test
-  void getCurrentDateInDesiredFormat() throws IOException {
-    // given
-    String dateFormat = "dd-MM-yyyy";
-    String[] args = {DATE_COMMAND, DATE_FORMAT_OPTION, dateFormat};
-    // when
-    commandLine.execute(args);
-    // then
-    String expected = LocalDate.now().format(DateTimeFormatter.ofPattern(dateFormat));
-    String actual = getOutStreamCaptor().toString();
-    actual = cleanOutput(actual);
-    assertEquals(actual, expected, "Expected : " + expected + " But was: " + actual);
-  }
+
 }

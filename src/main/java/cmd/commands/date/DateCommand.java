@@ -5,6 +5,7 @@ import picocli.CommandLine.Command;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.Locale;
@@ -21,11 +22,13 @@ public class DateCommand implements Runnable {
 
     public DateCommand() {
     }
+    @Option(names = {"-f", "--format"}, description = "")
+    private boolean format;
 
     @Override
     public void run() {
         Date actualDate=new Date();
-        String pattern = "yyyy-MM-dd";
+        String pattern = format?"dd-MM-yyyy":"yyyy-MM-dd";
         System.out.println(new SimpleDateFormat(pattern).format(actualDate));
     }
 
