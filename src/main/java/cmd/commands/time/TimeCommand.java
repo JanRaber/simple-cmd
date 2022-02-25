@@ -1,10 +1,13 @@
 package cmd.commands.time;
 
-import cmd.SimpleCmd;
 import picocli.CommandLine;
 import picocli.CommandLine.Option;
 
-import java.io.File;
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @CommandLine.Command(
         name = "time",
@@ -17,6 +20,12 @@ public class TimeCommand implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("15:10");
+        Date currentDate = new Date();
+
+        // Creating simple date formatter to 24 hours
+        SimpleDateFormat formatter = new SimpleDateFormat("kk:mm");
+
+        // getting the time in 24 hours format
+        System.out.println(formatter.format(currentDate));
     }
 }
