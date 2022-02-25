@@ -4,6 +4,7 @@ import cmd.SimpleCmd;
 import picocli.CommandLine.Command;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.Locale;
@@ -24,8 +25,8 @@ public class DateCommand implements Runnable {
     @Override
     public void run() {
         Date actualDate=new Date();
-        String pattern = "yyy-mm-dd";
-        System.out.println();
+        String pattern = "yyy-MM-dd";
+        System.out.println(new SimpleDateFormat(pattern).format(actualDate));
     }
 
     
